@@ -21,9 +21,15 @@
 
     <p> <%= link_to "Add an ingredient/dose", new_cocktail_dose_path(@cocktail) %></p>
 
-    <div> <h3>Pictures from our community</h3>
-      <%= cl_image_tag("se0tn96meqja2e7rfmr4",
-      width: 200, height: 150, crop: :fill) %>
+    <p>Add a picture</p>
+    <p> <%= simple_form_for(@cocktail) do |f|%>
+      <%= f.input :photos, as: :file %>
+      <%= f.submit "Add" %>
+  <% end %></p>
+
+    <h3>Community pictures</h3>
+    <% @cocktail.photos.each do |photo|  %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
     </div>
   </div>
-</div>
