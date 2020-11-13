@@ -1,0 +1,24 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/500×300/?cocktail);">
+  <div class="container">
+   <div class="row justify-content-center">
+      <h1>  <%= @cocktail.name  %></h1>
+    </div>
+  </div>
+</div>
+
+<p> <%= link_to "Back to cocktails list", cocktails_path %></p>
+
+<div class="container">
+  <div class="col-12">
+
+     <h2>List of doses per ingredients</h2>
+    <p><% @cocktail.doses.each do |dose| %>
+      <%= dose.description %>
+      <%= dose.ingredient.name %>
+      <%= link_to "delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %></p>
+
+    <p> <%= link_to "Add an ingredient/dose", new_cocktail_dose_path(@cocktail) %></p>
+  </div>
+</div>
