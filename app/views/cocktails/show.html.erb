@@ -1,5 +1,12 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photos.first.key, height: 300, width: 400, crop: :fill %>');">
+<%
+background = 'https://source.unsplash.com/random/500×300/?cocktail'
+if @cocktail.photos.first
+  background = cl_image_path @cocktail.photos.first.key, height: 500, width: 300, crop: :fill
+end
+%>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <%= background  %>);">
   <div class="container">
    <div class="row justify-content-center">
       <h1>  <%= @cocktail.name  %></h1>

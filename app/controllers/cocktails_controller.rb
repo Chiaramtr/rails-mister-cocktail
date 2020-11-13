@@ -26,7 +26,12 @@ class CocktailsController < ApplicationController
 
   def update
     @cocktail = Cocktail.find(params[:id])
-    @cocktail.update(cocktail_params)
+    @cocktail.update(params.require(:cocktail).permit(:name))
+    if params[:cocktail][:photos].present?
+      params[:cocktail][:photos].each do |photo|
+        @cocktail.photos.attach(photo)
+      end
+    end
     redirect_to cocktail_path(@cocktail)
   end
 
