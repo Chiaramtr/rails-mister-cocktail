@@ -20,5 +20,10 @@
     <% end %></p>
 
     <p> <%= link_to "Add an ingredient/dose", new_cocktail_dose_path(@cocktail) %></p>
+
+    <div> <h3>Pictures from our community</h3>
+      <%= cl_image_tag("se0tn96meqja2e7rfmr4",
+      width: 200, height: 150, crop: :fill) %>
+    </div>
   </div>
 </div>

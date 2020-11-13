@@ -31,6 +31,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'simple_form'
+gem 'cloudinary', '~> 1.16.0'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -38,6 +40,8 @@ group :development, :test do
   gem 'rspec-rails', '4.0.0.beta3'
   gem 'rails-controller-testing'
   gem 'dotenv-rails', groups: [:development, :test]
+  gem 'cloudinary', '~> 1.16.0'
+
 
 end
 
