@@ -1,9 +1,9 @@
 <h1>Add a cocktail</h1>
-  <p>
+  <p class="btn_for_form">
   <%= simple_form_for(@cocktail) do |f|%>
-  <%= f.input :name %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.submit "Add" %>
+    <%= f.input :name %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit "Add" %>
   <% end %>
   </p>
 

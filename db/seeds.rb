@@ -17,3 +17,4 @@ Cocktail.create(name: "Bloody Mary")
 Cocktail.create(name: "Tequila Sunrise")
 Cocktail.create(name: "Pisco Sour")
 Dose.create(ingredient: lemon, cocktail: mojito, description: "HHH")
+
